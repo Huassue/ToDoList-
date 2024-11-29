@@ -1,0 +1,18 @@
+@startuml
+    autonumber
+    Task->>User: 创建/编辑任务请求
+    User->>Task: 获取任务详情
+    User->>Tag: 为任务添加标签
+    Tag->>Task: 标签关联至任务
+    User->>AIAssistant: 请求分析任务紧急性和重要性
+    AIAssistant->>Task: 更新任务优先级
+    User->>ReminderService: 设置DDL提醒
+    ReminderService->>Task: 确认任务DDL
+    ReminderService->>AIAssistant: 请求AI分析
+    AIAssistant->>ReminderService: 返回分析结果
+    ReminderService->>User: 发送提醒通知
+    User->>TaskTimeline: 请求查看任务时间线
+    TaskTimeline->>Task: 获取任务数据
+    Task->>TaskTimeline: 返回任务信息
+    TaskTimeline->>User: 显示任务时间线
+@enduml

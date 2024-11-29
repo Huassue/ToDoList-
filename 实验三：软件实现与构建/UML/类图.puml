@@ -1,0 +1,47 @@
+@startuml
+    class Task {
+        +String title
+        +String description
+        +Date deadline
+        +List<Tag> tags
+        +String category
+        +String status
+        +Date reminderTime
+        +String reminderType
+    }
+    class User {
+        +String name
+        +String email
+        +String phone
+        +List<Task> tasks
+    }
+    class AIAssistant {
+        +analyzeUserActivity(User user)
+        +adjustReminderFrequency(Task task)
+        +predictTaskCompletion(Task task)
+    }
+    class ReminderService {
+        +sendNotification(User user, Task task)
+        +sendEmail(User user, Task task)
+        +sendSms(User user, Task task)
+    }
+    class TaskTimeline {
+        +List<Task> tasks
+        +Date start
+        +Date end
+        +displayTasks()
+    }
+    class Tag {
+        +String name
+        +String color
+        +String icon
+    }
+
+    User "1" -- "*" Task : owns
+    Task "1" -- "*" Tag : has
+    User "1" -- "1" AIAssistant : uses
+    AIAssistant "1" -- "*" Task : analyzes
+    ReminderService "1" -- "*" Task : sends
+    TaskTimeline "1" -- "*" Task : displays
+
+@enduml

@@ -1,0 +1,42 @@
+@startuml
+ class Database {
+        <<Component>>
+        +storeData()
+        +retrieveData()
+    }
+    class Backend {
+        <<Component>>
+        +APIController
+        +DatabaseService
+        +AuthService
+    }
+    class Frontend {
+        <<Component>>
+        +UI
+        +UX
+    }
+    class NotificationService {
+        <<Component>>
+        +sendNotification()
+        +sendEmail()
+        +sendSms()
+    }
+    class AIAssistant {
+        <<Component>>
+        +analyzeUserActivity()
+        +adjustReminderFrequency()
+        +predictTaskCompletion()
+    }
+    class TaskManagementSystem {
+        <<Component>>
+        +Task
+        +User
+        +Tag
+    }
+
+    Database "1" -- "1" Backend : accesses
+    Backend "1" -- "1" Frontend : serves
+    Backend "1" -- "1" NotificationService : uses
+    Backend "1" -- "1" AIAssistant : uses
+    Backend "1" -- "1" TaskManagementSystem : manages
+@enduml
