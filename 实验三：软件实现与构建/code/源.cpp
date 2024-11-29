@@ -37,28 +37,6 @@ public:
     }
 };
 
-// AIAssistant 类  具体功能留作TODO
-class AIAssistant {
-public:
-    // 分析用户活动
-    void analyzeUserActivity(User user) {
-        // 接口：分析用户的任务活动，调整任务优先级或提醒方式
-        cout << "分析用户 " << user.name << " 的任务活动..." << endl;
-    }
-
-    // 调整任务的提醒频率
-    void adjustReminderFrequency(Task task) {
-        // 接口：根据任务进展或用户行为调整提醒频率
-        cout << "根据任务 \"" << task.title << "\" 的进展调整提醒频率..." << endl;
-    }
-
-    // 预测任务完成时间
-    void predictTaskCompletion(Task task) {
-        // 接口：通过 AI 预测任务完成所需的时间
-        cout << "预测任务 \"" << task.title << "\" 的完成时间..." << endl;
-    }
-};
-
 // Tag 类
 class Tag {
 public:
@@ -278,6 +256,28 @@ public:
                 i++;
             }
         }
+    }
+};
+
+// AIAssistant 类  具体功能留作TODO
+class AIAssistant {
+public:
+    // 分析用户活动
+    void analyzeUserActivity(User user) {
+        // 接口：分析用户的任务活动，调整任务优先级或提醒方式
+        cout << "分析用户 " << user.name << " 的任务活动..." << endl;
+    }
+
+    // 调整任务的提醒频率
+    void adjustReminderFrequency(Task task) {
+        // 接口：根据任务进展或用户行为调整提醒频率
+        cout << "根据任务 \"" << task.title << "\" 的进展调整提醒频率..." << endl;
+    }
+
+    // 预测任务完成时间
+    void predictTaskCompletion(Task task) {
+        // 接口：通过 AI 预测任务完成所需的时间
+        cout << "预测任务 \"" << task.title << "\" 的完成时间..." << endl;
     }
 };
 
